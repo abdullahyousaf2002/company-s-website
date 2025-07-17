@@ -1,0 +1,323 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+/* Custom styles */
+.App {
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-roboto {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Line clamp utility */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom button hover effects */
+.btn-primary {
+  @apply bg-cyan-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-cyan-600 transition-colors duration-200;
+}
+
+.btn-secondary {
+  @apply bg-gray-200 text-gray-800 px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 transition-colors duration-200;
+}
+
+/* Card hover effects */
+.card-hover {
+  @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+}
+
+/* Datxoc brand gradients */
+.gradient-datxoc {
+  background: linear-gradient(135deg, #00A3E0 0%, #007BB8 50%, #005C8A 100%);
+}
+
+.gradient-datxoc-light {
+  background: linear-gradient(135deg, #E0F7FF 0%, #B3E5FC 50%, #81D4FA 100%);
+}
+
+.gradient-hero {
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #06b6d4 100%);
+}
+
+/* Loading animations */
+.spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #00A3E0;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Form improvements */
+.form-input {
+  @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-200;
+}
+
+.form-input:focus {
+  box-shadow: 0 0 0 3px rgba(0, 163, 224, 0.1);
+}
+
+/* Progress bar */
+.progress-bar {
+  @apply w-full bg-gray-200 rounded-full h-2;
+}
+
+.progress-fill {
+  @apply bg-cyan-500 h-2 rounded-full transition-all duration-1000 ease-out;
+}
+
+/* Responsive typography */
+@screen sm {
+  .text-responsive {
+    font-size: 1.125rem;
+  }
+}
+
+@screen md {
+  .text-responsive {
+    font-size: 1.25rem;
+  }
+}
+
+@screen lg {
+  .text-responsive {
+    font-size: 1.5rem;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00A3E0;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #007BB8;
+}
+
+/* Mobile-first responsive design */
+@media (max-width: 768px) {
+  .hero-text {
+    font-size: 2.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.125rem;
+  }
+  
+  .section-padding {
+    padding: 2rem 1rem;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .dark-mode-card {
+    @apply bg-gray-800 text-white;
+  }
+  
+  .dark-mode-input {
+    @apply bg-gray-700 border-gray-600 text-white;
+  }
+}
+
+/* Accessibility improvements */
+.focus-visible {
+  outline: 2px solid #00A3E0;
+  outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none;
+  }
+  
+  .print-only {
+    display: block;
+  }
+}
+
+/* Custom utilities */
+.text-shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.bg-gradient-primary {
+  background: linear-gradient(135deg, #00A3E0 0%, #007BB8 100%);
+}
+
+.bg-gradient-secondary {
+  background: linear-gradient(135deg, #81D4FA 0%, #4FC3F7 100%);
+}
+
+/* Animation delays for staggered effects */
+.animate-delay-100 {
+  animation-delay: 0.1s;
+}
+
+.animate-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.animate-delay-300 {
+  animation-delay: 0.3s;
+}
+
+/* Custom borders */
+.border-gradient {
+  border-image: linear-gradient(45deg, #00A3E0, #007BB8) 1;
+}
+
+/* Glassmorphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Custom box shadows */
+.shadow-custom {
+  box-shadow: 0 10px 25px rgba(0, 163, 224, 0.1);
+}
+
+.shadow-custom-hover {
+  box-shadow: 0 20px 40px rgba(0, 163, 224, 0.15);
+}
+
+/* Smooth transitions */
+.transition-smooth {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Custom spacing for better visual hierarchy */
+.space-y-custom > * + * {
+  margin-top: 1.5rem;
+}
+
+/* Hero section specific styles */
+.hero-background {
+  background: linear-gradient(135deg, #1e3a8a 0%, #00A3E0 50%, #06b6d4 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="%23ffffff" fill-opacity="0.1" points="0,1000 0,0 1000,0"/></svg>');
+  background-size: 100% 100%;
+}
+
+/* Consultation form specific styles */
+.consultation-form {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.consultation-step {
+  @apply bg-white rounded-lg shadow-lg p-8 max-w-4xl mx-auto;
+}
+
+.consultation-progress {
+  @apply flex items-center justify-between mb-8;
+}
+
+.consultation-progress-step {
+  @apply w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold;
+}
+
+.consultation-progress-step.active {
+  @apply bg-cyan-500 text-white;
+}
+
+.consultation-progress-step.completed {
+  @apply bg-green-600 text-white;
+}
+
+.consultation-progress-step.pending {
+  @apply bg-gray-200 text-gray-600;
+}
+
+/* Blog post specific styles */
+.blog-post-card {
+  @apply bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300;
+}
+
+.blog-post-card:hover {
+  transform: translateY(-4px);
+}
+
+.blog-category-badge {
+  @apply bg-cyan-100 text-cyan-800 text-xs font-medium px-2 py-1 rounded;
+}
+
+/* Footer specific styles */
+.footer-link {
+  @apply text-gray-400 hover:text-white transition-colors duration-200;
+}
+
+/* Navigation specific styles */
+.nav-link {
+  @apply px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200;
+}
+
+.nav-link.active {
+  @apply text-cyan-600 bg-cyan-50;
+}
+
+.nav-link:hover {
+  @apply text-cyan-600 bg-cyan-50;
+}
+
