@@ -218,11 +218,10 @@ const About = () => {
           
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Mission</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Vision</h2>
               <p className="text-gray-600 mb-6">
-                At Datxoc, we believe that artificial intelligence and machine learning should be accessible 
-                to businesses of all sizes. Our mission is to democratize AI technology and help companies 
-                leverage data-driven insights to make better decisions and drive growth.
+                To be the leading provider of AI-powered tools that drive smarter decisions
+                and sustainable growth across critical global sector.
               </p>
               <p className="text-gray-600">
                 We work closely with our clients to understand their unique challenges and develop 
